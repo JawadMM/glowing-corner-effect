@@ -1,0 +1,26 @@
+.card {
+  height: 380px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  height: 650px;
+  width: 650px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr), transparent, transparent);
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
